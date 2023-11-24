@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sethjiproject/tabbarpages/tabbarlearning.dart';
 
 class Learning extends StatefulWidget {
   const Learning({super.key});
@@ -23,16 +24,24 @@ class _LearningState extends State<Learning> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        height: 50,
-                        width: 50,
-                        child:
-                            Icon(Icons.arrow_back_ios_new, color: Colors.white),
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle, color: Color(0xff272729)),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => TabBarButton()),
+                          );
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 50,
+                          child:
+                              Icon(Icons.arrow_back_ios_new, color: Colors.white),
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle, color: Color(0xff272729)),
+                        ),
                       ),
                       Text(
-                        'Marketing',
+                        'Accounts',
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -52,57 +61,57 @@ class _LearningState extends State<Learning> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    height: 350,
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Stack(
-                      children: [
-                        Opacity(
-                          opacity: 0.3,
-                          // Adjust the opacity value as needed (0.0 for fully transparent, 1.0 for fully opaque)
-                          child: Image(
-                            image: AssetImage('assets/wshopp.jpg'), // Use '/' for the asset path separator
+                      height: 350,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Stack(
+                        children: [
+                          Opacity(
+                            opacity: 0.3,
+                            // Adjust the opacity value as needed (0.0 for fully transparent, 1.0 for fully opaque)
+                            child: Image(
+                              image: AssetImage(
+                                  'assets/wshopp.jpg'), // Use '/' for the asset path separator
+                            ),
                           ),
-                        ),
-                        Center(
-                          child: Icon(
-                            Icons.play_arrow,
-                            // Replace this with the desired icon
-                            size: 50, // Adjust the size of the icon as needed
-                            color: Colors
-                                .white, // Adjust the color of the icon as needed
+                          Center(
+                            child: Icon(
+                              Icons.play_arrow,
+                              // Replace this with the desired icon
+                              size: 50, // Adjust the size of the icon as needed
+                              color: Colors
+                                  .white, // Adjust the color of the icon as needed
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 100),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'View all playlist',
-                                    style: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      color: Colors.white,
-                                      fontSize: 10,
-                                      fontFamily: 'Mabry',
+                          Padding(
+                            padding: const EdgeInsets.only(top: 100),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'View all playlist',
+                                      style: TextStyle(
+                                        decoration: TextDecoration.underline,
+                                        color: Colors.white,
+                                        fontSize: 10,
+                                        fontFamily: 'Mabry',
+                                      ),
                                     ),
-                                  ),
-                                  Icon(Icons.arrow_forward_ios_outlined, color: Colors.white, size: 15),
-                                ],
-                              ),
-                            ],
+                                    Icon(Icons.arrow_forward_ios_outlined,
+                                        color: Colors.white, size: 15),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
-                    )
-
-                  ),
+                        ],
+                      )),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16),
@@ -247,7 +256,8 @@ class _LearningState extends State<Learning> {
                       ),
                     ),
                   ),
-                )
+                ),
+                SizedBox(height: 50,),
               ],
             ),
           ),

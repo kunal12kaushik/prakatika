@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:sethjiproject/career/careerhome.dart';
 import 'package:sethjiproject/homepage.dart';
 import 'package:sethjiproject/learning.dart';
 import 'package:sethjiproject/popup.dart';
+import 'package:sethjiproject/profilepage.dart';
+import 'package:sethjiproject/tabbarpages/tabbarlearning.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -17,9 +20,9 @@ class _NavBarState extends State<NavBar> {
   List<Widget> _buildScreen() {
     return [
       HomePage(), // Screen for the first item
-      Learning(), // Screen for the second item
-      Container(), // Screen for the third item
-      Container(), // Screen for the fourth item
+      TabBarButton(), // Screen for the second item
+      CareerHome(), // Screen for the third item
+      ProfilePage(), // Screen for the fourth item
     ];
   }
 
